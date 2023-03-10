@@ -1,0 +1,15 @@
+package cl.corona.integrationgroupi;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@SpringBootApplication
+@EnableScheduling
+public class IntegrationGroupIApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(IntegrationGroupIApplication.class, args);
+	}
+
+}
