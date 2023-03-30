@@ -6,10 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -52,8 +49,9 @@ public class intUpload {
 
         try {
 
-            client.connect(d_sftpip);
-            boolean login = client.login(d_sftpusr, d_sftppss);
+            client.connect(d_sftpip, d_sftpprt);
+            client.login(d_sftpusr, d_sftppss);
+
             client.setFileType(FTPClient.BINARY_FILE_TYPE);
             final String path = strDir + separador + d_sftporg;
             //final String path = sftporg;
